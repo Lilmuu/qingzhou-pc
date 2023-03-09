@@ -1,0 +1,48 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-29 10:40:46
+ * @LastEditTime: 2022-08-04 11:38:07
+ * @LastEditors: youshijun 1046422605@qq.com
+ * @Description: In User Settings Edit
+ * @FilePath: \task-pc-ui\html\wechat.html
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轻舟下载</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./static/css/wechat.css">
+    <script type="text/javascript" src="./static/js/qrcode.min.js"></script>
+    <script type="text/javascript" src="./static/js/fontsize.js"></script>
+  </head>
+  <body>
+    <div class="wechat-page">
+      <div>
+        <img class="logo_img" src="./static/img/meeting/logo.png" alt="">
+      </div>
+      <p>轻舟APP下载</p>
+      <div>
+        <img class="wechat_bg" src="./static/img/meeting/wechat_bg.png" alt="">
+      </div>
+    </div>
+    <div class="mask">
+      <img class="wechat_tips" src="./static/img/meeting/wechat_tips.png" alt="">
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    window.onload = function() {
+      let ua = navigator.userAgent.toLowerCase();
+      if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        console.log('hehe- 000111====ooo')
+        document.getElementById('mask').style.display="block"
+      } else {
+        console.log('hehe- 000111')
+        document.getElementById('mask').style.display="none"
+        window.location.href="https://task-demo.cguarantee.com/轻舟.apk";
+      }
+    }
+  </script>
+</html>

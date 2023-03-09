@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,body {
+width: 100%;
+font-size: 62.5%;
+}
+
+.wechat-page{
+  width: 100%;
+  background-color: #fff;
+}
+.wechat-page>div{
+  overflow: hidden;
+}
+.wechat-page>p{
+  margin-top: 0.7rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #174AA7;
+}
+
+.wechat-page .logo_img{
+  display: block;
+  width: 1.6rem;
+  height: 1.34rem;
+  margin: 1.68rem auto 0;
+}
+.wechat_bg{
+  display: block;
+  width: 5.65rem;
+  height: 6.93rem;
+  margin: 1.04rem auto 0;
+}
+.mask{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.7),rgba(0,0,0,0.2));
+}
+.mask .wechat_tips{
+  display: block;
+  width: 5.86rem;
+  height: 1.45rem;
+  margin: 0.55rem 0.35rem 0 auto;
+}

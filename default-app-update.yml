@@ -1,0 +1,3 @@
+provider: generic
+url: 'http://183.230.177.156:20080/static'
+updaterCacheDirName: task-manager-updater

@@ -1,0 +1,266 @@
+
+// customMsgBox
+.customMsgBox {
+  $msgBox-text-height: 18px;
+  .el-message-box__header {
+    // border-bottom: 1px solid #eee;
+    // padding: 24px 20px 0px;
+  }
+  .el-message-box__content{
+    padding: 24px 20px 66px ;
+    .innerHeader{
+      margin-top: 0;
+    }
+  }
+  .el-button--primary{
+    background: #3370FF;
+    color: #FFF;
+    width: 84px;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    :hover{
+      background: #5B8CFF!important;
+    }
+  }
+  .cancelButton{
+    width: 84px;
+    height: 32px;
+    border: 1px solid #DEE0E3;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+  }
+  .cancelButtonqx{
+    width: 84px;
+    height: 32px;
+    border: 1px solid #DEE0E3;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+  }
+  .cancelButtonqd{
+    width: 84px;
+    height: 32px;
+    border: 0;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #F54A45;
+    &:hover{
+      background: #F76E6A!important;
+    }
+  }
+  .el-message-box__title {
+    font-size: $msgBox-text-height;
+    line-height: $msgBox-text-height;
+    position: relative;
+    font-size: 14px;
+  }
+}
+.customMsgBoxDel{
+  .el-message-box__content{
+    padding: 24px 20px 66px ;
+    .innerHeader{
+      margin-top: 0;
+    }
+  }
+  .el-button--primary{
+    background: #F54A45;
+    width: 84px;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .cancelButton{
+    width: 84px;
+    height: 32px;
+    border: 1px solid #DEE0E3;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+  }
+  .cancelButtonqx{
+    width: 84px;
+    height: 32px;
+    border: 1px solid #DEE0E3;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+  }
+  .cancelButtonqd{
+    width: 84px;
+    height: 32px;
+    border: 0;
+    opacity: 1;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #F54A45;
+  }
+}
+
+.customMsgBox3 {
+  .el-message-box__content{
+    padding: 24px 20px 20px;
+    .innerTips1{
+      height: 40px;
+    }
+  }
+}
+
+.confirmBtn {
+  width: 100px;
+  height: 32px;
+  border-radius: 4px;
+  border: none;
+}
+.confirmButton {
+  color: #FFFFFF;
+  background: #3471FF;
+  &:hover {
+    color: #FFFFFF;
+    background: #3471FF;
+  }
+}
+.cancelButton {
+  color: #404758;
+  background: #fff;
+  border: 1px solid #D0D3D6;
+  &:hover {
+    background: rgba(222, 224, 227, 0.2);
+    color: #404758;
+    border: 1px solid rgba(222, 224, 227, 0.7);
+  }
+}
+.cancelButtonqx {
+  color: #404758;
+  background: #fff;
+  border: 1px solid #D0D3D6;
+  &:hover {
+    color: #404758;
+    background: rgba(222, 224, 227, 0.2);
+    border: 1px solid #DEE0E3;
+  }
+}
+.cancelButtonqd {
+  color: #404758;
+  background: #fff;
+  border: 1px solid #D0D3D6;
+  &:hover {
+    color: white;
+    background: #F54A45 !important;
+    border: 0;
+  }
+}
+.customMsgBoxForBtn{
+  .confirmButton{
+    background: #F54A45;
+    &:hover, &:focus{
+      background: #F76E6A!important;
+    }
+  }
+  .el-button--primary{
+    :hover{
+      background: #F76E6A!important;
+    }
+  }
+}
+
+.rightTangleBtn {
+  min-width: 84px;
+  height: 32px;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 24px;
+}
+.rightTangleBtn.cancelButton {
+  // background: #fff;
+}
+.rightTangleBtnBorder {
+  border: 1px solid #DCDFE6;
+}
+
+.msgBoxDialog {
+  .el-dialog {
+    margin-top: calc(50vh - 70px)!important;
+    border-radius: 4px!important;
+  }
+  .msgBoxDialogTitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 25px;
+  }
+  .el-dialog__header {
+    display: none;
+  }
+}
+.inputDialog {
+  .el-dialog__body {
+    padding: 10px 10px 10px 26px;
+  }
+}
+.back-input-container {
+  padding-left: 35px;
+  padding-right: 20px;
+  margin-top: 6px;
+  margin-bottom: 13px;
+  .el-textarea__inner {
+    background: rgb(246, 246, 246);
+    border: none;
+    font-size: 12px;
+  }
+}
+.action-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.hideMsgHeader {
+  .el-message-box__header {
+    display: none;
+  }
+}
+
+.msgBoxInner {
+  display: flex;
+  flex-direction: column;
+  .innerHeader {
+    margin-top: 10px;
+    display: flex;
+    .innerIcon {
+      text-align: center;
+      margin-top: 3px;
+      margin-right: 10px;
+    }
+    .innerTitle {
+      font-size: 16px;
+      font-weight: 500;
+      color: #404758;
+      line-height: 25px;
+      flex: 1;
+      font-family: Source Han Sans CN;
+    }
+  }
+  .innerTip {
+    font-size: 12px;
+    font-weight: 400;
+    color: #BFBFBF;
+    // padding-left: 28px;
+  }
+  .innerTips1{
+    height: 50px;
+  }
+  .reject_remarks{
+    height: 90px;
+    margin-top: 10px;
+    border: none;
+    background: #F6F6F6;
+    padding: 10px;
+  }
+}

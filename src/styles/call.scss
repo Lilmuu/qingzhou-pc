@@ -1,0 +1,169 @@
+.callWindowTip {
+  width: 300px;
+  right: 2px;
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 15px 15px 10px 15px;
+  background: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  .callWindowContainer {
+    .callRow {
+      display: flex;
+      align-items: center;
+      .callInfo {
+        .callName {
+          font-size: 18px;
+          color: #333333;
+        }
+        .callText {
+          color: #a2a0a0;
+          margin-top: 4px;
+        }
+      }
+    }
+    .callActionRow {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .callAction {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        .callImg {
+        }
+      }
+      .callAction-on {
+        background: #07C160;
+      }
+      .callAction-off {
+        background: #FF3115;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+.callView {
+  background: #0F1117;
+}
+.callTimer {
+  color: #fff;
+  font-size: 20px;
+  margin-left: 120px;
+  line-height: 30px;
+}
+.callMainView {
+  height: calc(100vh - 30px);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  .roomType{
+    //display: flex;
+    //justify-content: space-around;
+    //width: 500px;
+    display: grid;
+    //grid-template-columns: 100px 100px 100px;
+    //grid-template-rows: 100px 100px 100px;
+    grid-row-gap: 20px;
+    grid-column-gap: 25px;
+    font-size: 33px;
+    //margin-top: 90px;
+    .callAvatarRoom{
+      //width: 120px;
+      //height: 120px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #008CFF;
+      color: #fff;
+      text-align: center;
+      //margin-top: 100px;
+    }
+  }
+  .callAvatar {
+    width: 167px;
+    height: 167px;
+    border-radius: 50%;
+    background: #008CFF;
+    color: #fff;
+    text-align: center;
+    font-size: 33px;
+    margin-top: 100px;
+  }
+  .callUserName {
+    font-size: 22px;
+    color: #FFFFFF;
+    margin-top: 34px;
+    max-width: 200px;
+  }
+  .callActionRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    position: absolute;
+    bottom: 70px;
+    .callActionItem {
+      text-align: center;
+      .callActionBtn {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .callActionBtnNormal {
+        background: #555555;
+      }
+      .callActionBtnOff {
+        background: #FF3115;
+      }
+      .callActionItemImg {
+
+      }
+      .callActionText {
+
+      }
+    }
+    .callMic_on {
+      background: #555555!important;
+    }
+    .callMic_off {
+      background: #fff!important;
+    }
+  }
+}
+
+.vol_slider_container {
+  position: relative;
+  .vol_slider_item {
+    position: absolute;
+    bottom: 85px;
+    left: 6px;
+
+    .el-slider.is-vertical .el-slider__runway {
+      width: 2px;
+    }
+
+    .el-slider.is-vertical .el-slider__button-wrapper {
+      top: auto;
+      left: -17px;
+    }
+
+    .el-slider__button {
+      border: none !important;
+    }
+
+    .el-slider.is-vertical .el-slider__bar {
+      width: 2px;
+      border-radius: 0 0 3px 3px;
+    }
+    .el-slider__button {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

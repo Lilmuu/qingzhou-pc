@@ -1,0 +1,748 @@
+$meetingNavHeight: 40;
+$meetingHeaderHeight: 32;
+
+#meeting-view {
+  .el-menu-item {
+    height: 58px;
+  }
+  .meeting-left-row {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 12px 20px;
+    margin: 15px 0;
+    .tongxl_icon {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      margin-right: 15px;
+    }
+  }
+  .meeting-menu-text-item {
+    display: flex;
+    flex-direction: column;
+    line-height: 25px;
+    .meeting-menu-text-item-title {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 500;
+      color: #222222;
+    }
+    .meeting-menu-text-item-sub {
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 6px;
+      font-weight: 500;
+      color: #999999;
+      
+    }
+  }
+}
+
+.meeting-right-menu-container {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  padding: 10px;
+  color: #222;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+}
+
+.dialog-qos {
+  font-size: 12px;
+  top: 60px;
+  left: 0;
+  padding: 20px;
+  position: absolute;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
+.qosItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  .qosItemTitle {
+    margin-right: 15px;
+  }
+}
+.btn-stopQos {
+  border: none;
+  background: none;
+  color: #fff;
+}
+
+.meetingViewContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  .meeting-action-container {
+    border-radius: 8px;
+    margin-right: 100px;
+  }
+  .meeting-action-img-container {
+    width: 225px;
+    height: 128px;
+    background: #F3F3F3;
+    border-radius: 8px;
+    .meeting-action-img {
+      width: 93px;
+      height: 59px;
+    }
+  }
+  .meeting-action-text {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #222222;
+  }
+}
+.addMeeting-form {
+  margin-top: 0;
+  $addMeeting-form-width: 500px;
+  .addMeeting-form-input {
+    width: $addMeeting-form-width;
+  }
+  .el-input-group__prepend {
+    background: #3471FF;
+    color: #fff;
+    border: none;
+  }
+  .el-input__inner {
+    background: #F5F5F5;
+    border: none;
+  }
+  .action-btn {
+    width: $addMeeting-form-width;
+    height: 40px;
+    background: #3471FF;
+    border-radius: 23px;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
+}
+.meeting-form-action-icon-row {
+  margin-top: 90px;
+  margin-bottom: 75px;
+  user-select: none;
+  .meeting-form-action-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+}
+.icon-on {
+  background: #3471FF;
+}
+.icon-off {
+  background: #DEE8FF;
+}
+
+.meetingRoomContainer {
+  .meetingRoom-top-bar {
+    font-size: 19px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 20px;
+    padding: 5px 10px;
+  }
+  .meetingRoomHeaderInfo {
+    .arrow-icon {
+      color: #3471ff;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+  }
+  .meetingRoom-action-img {
+    width: 16px;
+    height: 16px;
+    margin-left: 20px;
+  }
+}
+.meetingMenu-action-img {
+  width: 11px;
+  height: 16px;
+  margin-left: 20px;
+}
+.currentMeetingInfoContainer {
+  color: #222222;
+  line-height: 24px;
+  .link-info {
+    min-height: 80px;
+  }
+  .copyBtn {
+    width: 100%;
+    height: 40px;
+    background: #3471FF;
+    border-radius: 3px;
+    color: #FFFFFF;
+  }
+}
+.meetingPopover {
+  left: 15px!important;
+}
+.meetingScreenContainer {
+  position: relative;
+}
+
+//视频相关
+.videoDiv {
+  display: inline-block;
+  border: 1px solid #000000;
+  line-height: 0;
+  position: relative;
+}
+
+.action-bottom-bar-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.action-bottom-bar_icon{
+  >div{
+    padding: 2px 15px;
+    background: #F5F6F7;
+    border-radius: 3px 3px 0 0;
+  }
+}
+.bottom-action-bar-arrow {
+  font-size: 14px;
+  font-weight: 600;
+}
+.action-bottom-bar {
+  display: flex;
+  align-items: center;
+  padding-left: 29px;
+  transition: height .1s linear;
+  overflow: hidden;
+}
+.action-bottom-bar-show {
+  height: 68px;
+  background: #F5F6F7;
+  position: relative;
+}
+.action-bottom-bar-hide {
+  height: 0;
+  .bottom-action-bar{
+    display: none;
+    position: static;
+  }
+}
+.videoFlex{
+  display: flex;
+  align-items: center;
+}
+.videoViewContent{
+  position: absolute;
+  // top: 40px;
+  top:20px;
+  left: 0;
+  height: calc(100% - 80px);
+  background-color: #000000;
+  width: 100%;
+  .videoExtra2 {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    color: #646A73;
+    z-index: 9;
+  }
+  .nameDiv {
+    background-color: #fff;
+    padding: 0 20px;
+    border-radius: 6px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+  }
+  .compere{
+    width: 40px;
+    height: 14px;
+    font-size: 10px;
+    background: #FF8800;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 9px;
+    color: #fff;
+  }
+  .videoOffArea{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #F5F8FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }
+}
+.videoViewFooter{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40px;background-color: #313131;
+  width: 100%;
+}
+
+.meetingMessageContainer {
+  position: absolute;
+  left: 30px;
+  bottom: 86px;
+  width: 320px;
+  //max-height: calc(100vh - 143px);
+  max-height: 400px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  z-index: 9;
+  .meetingMsgList {
+    display: flex;
+    flex-direction: column;
+  }
+  .meetingMsgItem {
+    width: 320px;
+    padding: 10px;
+    color: #FFFFFF;
+    background: rgba(31, 35, 38, 0.35);
+    border-radius: 6px;
+    word-break: break-all;
+    margin-bottom: 5px;
+    font-size: 14px;
+    display: flex;
+    .messageItemLeft{
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+      img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    .messageItemRight{
+      flex: 1;
+      p{
+        margin: 0;
+      }
+      p:nth-of-type(1){
+        margin-bottom: 10px;
+        display: flex;
+        >span{
+          margin-left: 14px;
+        }
+        
+      }
+      p:nth-of-type(2){
+        font-size: 12px;
+      }
+    }
+    .compere{
+      width: 40px;
+      height: 14px;
+      font-size: 10px;
+      background: #FF8800;
+      border-radius: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .messageItemRightdianzan{
+      display: flex;
+      height: 32px;
+      align-items: center;
+      flex: 1;
+      p{
+        margin: 0;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        width: 100%;
+        >span:nth-of-type(1){
+          max-width: 155px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        >span:nth-of-type(2){
+          margin-left: 14px;
+        }
+        >img{
+          margin-left: 14px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+  .msgHide{
+    // transition: all 0.5s ease;
+    // opacity: 0;
+    animation: opacitys 0.5s ease-in-out 0s 1 alternate forwards;
+  }
+  .msgDisplay{
+    display: none;
+  }
+  @keyframes opacitys {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .likeMessageItem {
+    display: flex;
+    align-items: center;
+  }
+  .myMsg {
+    color: #3471FF;
+    margin-right: 20px;
+  }
+  .otherMsg {
+    color: #FF6600;
+    margin-right: 20px;
+  }
+  .likeMessageIcon {
+    width: 18px;
+    margin-left: 8px;
+    margin-top: -3px;
+  }
+}
+
+.msgUpIcon {
+  width: 14px;
+  height: 14px;
+  margin-left: 14px;
+}
+
+.meetingScreen {
+  width: 100%;
+  height: calc(100vh - #{$meetingHeaderHeight + $meetingNavHeight - 12}px);
+  background-color: #000000;
+}
+.bottom-say-bar {
+  width: 360px;
+  .el-input-group {
+    border: 1px solid #D0D3D6;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 32px;
+    font-size: 14px;
+    display: flex;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .el-icon-s-promotion {
+    font-size: 21px;
+    color: #BFBFBF;
+  }
+  .el-input-group__append {
+    border: none;
+    background: #F5F6F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .el-button {
+      padding: 10px!important;
+      height: 32px;
+      line-height: 32px;
+      i{
+        color: #1F2329;
+      }
+    }
+  }
+  .el-input__inner {
+    background: #F5F6F7;
+    border: none;
+    color: #333;
+    height: 100%;
+  }
+  .input-with-select:hover {
+    border-color: #C0C4CC;
+  }
+  .input-with-select.canSend{
+    border-color: #409EFF;
+    
+  }
+}
+
+.canSend {
+  .el-input-group__append {
+    background: #F5F6F7;
+  }
+  .el-icon-s-promotion {
+    color: #3471FF!important;
+  }
+}
+
+.bottom-action-bar {
+  width: 350px;
+  border-radius: 8px;
+  transition: transform 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 10px 0;
+  position: absolute;
+  left: calc(50% - 170px);
+  .el-loading-mask {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .bottom-action-bar-item {
+    color: #1F2329;
+    font-size: 12px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .meeting-form-action-icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 10px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .el-loading-mask {
+      border-radius: 32px;
+      .el-loading-spinner {
+        margin-top: -15px;
+        .circular {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .bottom-action-left {
+    position: absolute;
+    left: -40px;
+    width: 45px;
+    height: 75px;
+    background: #DEE8FF;
+    border-radius: 8px 0px 0px 8px;
+    font-size: 30px;
+    color: #BDD1FF;
+    font-weight: bold;
+  }
+  .bottom-action-right {
+    position: absolute;
+    right: -40px;
+    width: 45px;
+    height: 75px;
+    background: #DEE8FF;
+    border-radius: 0px 8px 8px 0px;
+    font-size: 30px;
+    color: #BDD1FF;
+    font-weight: bold;
+  }
+}
+.bottom-action-bar.el-loading-parent--relative {
+  position: unset!important;
+}
+.showBottomBar {
+  .bottom-action-left {
+    display: none;
+  }
+}
+.hideBottomBar {
+  .bottom-action-right {
+    display: none;
+  }
+}
+
+.showBottomBar.bottom-action-bar {
+  padding-left: 20px!important;
+  padding-right: 40px!important;
+}
+
+.hideBottomBar.bottom-action-bar {
+  right: 70px!important;
+  padding-left: 20px!important;
+  transform: translateX(100%)!important;
+}
+.userListDrawer {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 340px;
+  height: calc(100vh - #{$meetingNavHeight + $meetingHeaderHeight - 12}px);
+  background: #FFFFFF;
+  .userHeader {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 17px 10px 0 20px;
+    color: #1F2329;
+    // background: #FBFBFC;
+  }
+  .userListActionRow {
+    padding: 5px 0 50px 0;
+    display: flex;
+    justify-content: center;
+    .userListActionBtn {
+      width: 180px;
+      height: 32px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  }
+}
+
+.userListContainer {
+  margin-top: 25px;
+  height: calc(100% - 164px);
+  overflow: hidden;
+  overflow-y: auto;
+  .userListItem {
+    padding: 0 10px;
+    .userItemRow {
+      height: 56px;
+      .userItemInfo {
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        .userItemInfoTip {
+          display: flex;
+          flex-direction: column;
+          .username {
+            font-size: 14px;
+            font-weight: 500;
+            color: #1F2329;
+            margin-bottom: 7px;
+          }
+          .userTip {
+            width: 35px;
+            height: 14px;
+            color: #fff;
+            background: #FF8800;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .face{
+          img{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+          }
+        }
+      }
+      .userItemAction {
+        margin-right: 10px;
+        img{
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+    .userItemRow:hover{
+      background: #F5F6F7;
+      border-radius: 6px;
+    }
+  }
+}
+.menuMeetingScreen {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  .menuScreenItem {
+    width: calc(100vw / 3);
+    height: calc(calc(100vh - 70px) / 3);
+    padding: 0 10px 20px 10px;
+    .menuImg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+#option-dialog {
+  .el-dialog {
+    margin-top: 0!important;
+  }
+}
+
+@media (min-width: 1600px) {
+  #option-dialog {
+    .el-dialog {
+      margin-top: 8vh!important;
+    }
+  }
+}
+
+.videoViewContent {
+  width: 100%;
+  height: calc(100% - 30px);
+}
+.videoViewContentMore {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.sourceListContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-height: 60vh;
+  overflow: hidden;
+  overflow-y: auto;
+  margin-top: 20px;
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: #DEE0E3;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #F5F6F7;
+    border-radius: 10px;
+  }
+  .sourceListItem {
+    width: 220px;
+    height: 180px;
+    padding: 14px 10px;
+    margin: 0 14px 14px 0;
+    background: #fff;
+    >div{
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #404758;
+      font-family: Source Han Sans CN;
+    }
+    img{
+      width: 200px;
+      height: 128px;
+    }
+  }
+  .sourceListItem:hover{
+    background: #3370FF;
+    border-radius: 6px;
+    >div{
+      color: #fff;
+    }
+  }
+}

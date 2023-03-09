@@ -1,0 +1,41 @@
+.DS_Store
+node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+.env.test
+.env.test.back
+.env.development
+
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+yarn-error.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.7z
+.history
+.history/
+/.history
+/package.json
+package.json
+/package-lock.josn
+package-lock.josn
+/yarn.lock
+yarn.lock
+
+#Electron-builder output
+/dist_electron

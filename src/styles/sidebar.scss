@@ -1,0 +1,279 @@
+#app {
+  // 主体区域
+  .main-container {
+    min-height: 100%;
+    transition: margin-left .28s;
+    // margin-left: 180px;
+  }
+   // 侧边栏
+  .sidebar-container {
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+    transition: width .28s;
+    width: 180px !important;
+    height: 100%;
+    position: fixed;
+    font-size: 14px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    color: #BDC8E1;
+    .el-menu {
+      border: none;
+      width: 100% !important;
+      background: none;
+    }
+    .main-left-menu{
+      color: #BDC8E1;
+      li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0!important;
+        img{
+          width: 20px;
+        }
+        div{
+          font-size: 12px;
+          line-height: 12px;
+          margin-top: 9px;
+        }
+      }
+      li:hover, .is-active{
+        background-color: #28334A!important;
+        border-radius: 10px!important;
+      }
+    }
+
+    // a {
+    //   display: inline-block;
+    //   width: 100%;
+    // }
+
+    // .menu-wrapper{
+    //   .el-tooltip{
+    //     line-height: 5rem;
+    //   }
+    // }
+
+  }
+
+  .hideSidebar {
+    .sidebar-container {
+      z-index: 99;
+      width: 80px !important;
+    }
+    .main-container {
+      margin-left: 80px;
+      // background: linear-gradient(180deg, #384970 0%, #333F52 100%);
+    }
+    .submenu-title-noDropdown {
+      // padding-left: 10px !important;
+      position: relative;
+      .el-tooltip {
+        text-align: center;
+      }
+      .el-badge__content{
+        padding: 0;
+        width: 20px;
+        line-height: 14px;
+        font-size: 10px;
+        border: none;
+        background: url("../assets/img/message_bg.png") no-repeat center center;
+        background-size: 100% 100%;
+        border-radius: 0!important;
+      }
+      .el-badge__content.is-fixed{
+        top: 0;
+        right: 4px;
+      }
+
+    }
+    .el-submenu {
+      &>.el-submenu__title {
+        padding-left: 10px !important;
+        .el-submenu__icon-arrow {
+          display: inline-block;
+          width: 8px;
+          height: 10px;
+          margin-top: -5px;
+          background: url(../assets/img/workbench/menu-arrow.png) no-repeat center/cover;
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+    .is-opened>.el-submenu__title .el-submenu__icon-arrow {
+      transform: rotateZ( 90deg );
+    }
+  }
+
+
+  .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
+  .sidebar-container .el-submenu .el-menu-item {
+    min-width: 180px !important;
+    background-color: $subMenuBg !important;
+  }
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width: 180px !important;
+  }
+
+  //适配移动端
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+    .sidebar-container {
+      top: 50px;
+      transition: transform .28s;
+      width: 180px !important;
+    }
+    &.hideSidebar {
+      .sidebar-container {
+        transition-duration: 0.3s;
+        transform: translate3d(-180px, 0, 0);
+      }
+    }
+  }
+
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
+
+// 任务右侧弹框
+.drawerBox{
+  .taskDrawer{
+    width: 680px!important;
+    margin-top: 42px;
+    height:calc(100vh - 42px);
+    #el-drawer__title{
+      height: 52px;
+      margin: 0;
+      padding: 0 16px 0 30px;
+      .tabRowSlot{
+        background: none;
+        height: auto;
+        padding: 0;
+        align-items: center;
+        .tabLeft{
+          height: none;
+          border-radius: 0;
+          .title{
+            position: relative;
+            color: #1F2329;
+            font-size: 18px;
+            width: auto;
+            margin: 0 24px 0 0;
+          }
+        }
+        .tabLeft .title:first-child::before {
+          content: '';
+          position: absolute;
+          width: 4px;
+          border-radius: 0 3px 3px 0;
+          background-color: #3370FF;
+        }
+        .tabLeft_select{
+          background: none;
+        }
+      }
+      .close_icon{
+        width: 16px;
+        cursor: pointer;
+      }
+    }
+    .el-drawer__body{
+      padding: 0 30px;
+    }
+    .tabRight{
+      margin-right: 0;
+  }
+  }
+  .rtl.taskDrawer .tabLeft{
+    height: 52px;
+    .title.tabLeft_select{
+      line-height: 52px;
+    }
+    // .tabLeft_select::before{
+    //   content: "";
+    //   position: absolute;
+    //   width: 100%!important;
+    //   height: 4px;
+    //   top: 0;
+    //   left: 0;
+    //   border-radius: 0!important;
+    //   background-color: #3370FF;
+    // }
+  }
+}
+
+
+.change_avatar_box{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  cursor: pointer;
+  background-color: rgba(15, 22, 51, 0.15);
+  .avatar_box_cont{
+    width: 520px;
+    height: 520px;
+    margin: 0 auto;
+    margin-top: calc((100vh - 520px) / 2);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #FFF;
+    .header{
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 52px;
+      font-size: 16px;
+      color: #1F2329;
+      background-color: #FBFBFC;
+      img{
+        width: 16px;
+        cursor: pointer;
+      }
+    }
+    .avatar_cont{
+      height: 400px;
+      padding: 10px 30px;
+      .vue-cropper{
+        .crop-info{
+          display: none;
+        }
+        .cropper-view-box{
+          outline: none;
+          border-radius: 50%;
+        }
+        .cropper-face{
+          background: none;
+        }
+      }
+    }
+    .avatar_footer{
+      padding: 14px 30px 0;
+      height: 68px;
+      text-align: right;
+      .el-button{
+        width: 84px;
+        height: 32px;
+        padding: 0;
+        line-height: 30px;
+      }
+    }
+  }
+}

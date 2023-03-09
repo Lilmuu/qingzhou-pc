@@ -1,0 +1,257 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>轻舟会议</title>
+  <link rel="icon" href="./favicon.ico">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    .main-row {
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+    #pc_meetingBg {
+      margin: 0 auto;
+      animation: animate-cloud 20s linear infinite;
+      background: url(./static/img/meeting/bg.png) 0 bottom no-repeat #ffffff;
+      background-size: 100vw 100vh;
+    }
+    #meetingContainer {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    .meeting_left {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .meeting_right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+    }
+    .meeting_right_column {
+      display: flex;
+      flex-direction: column;
+      margin-top: -10em;
+      margin-left: 4em;
+    }
+    .meeting-download-container {
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      box-shadow: -2px 3px 12px 0px rgb(10 13 47 / 10%);
+      border-radius: 8px;
+      padding: 20px 15px;
+      margin: 30px 0 40px 0;
+    }
+    .meeting-title {
+      height: 35px;
+      font-size: 35px;
+      font-family: Source Han Sans CN;
+      font-weight: bold;
+      color: #333333;
+    }
+    .logo_img {
+      width: 240px;
+      margin-top: -10em;
+    }
+    .meeting-img {
+      width: 37px;
+    }
+    .download_title {
+      font-size: 20px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #333333;
+    }
+    .download_info {
+      margin-top: 5px;
+      font-size: 16px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      color: #777777;
+    }
+    #roomLink {
+      display: inline-block;
+      color: #174AA7;
+      font-size: 12px;
+      font-family: Source Han Sans CN;
+      font-weight: 400;
+      display: inline-block;
+    }
+    #android_meeting {
+      display: none;
+      margin: 0 auto;
+      animation: animate-cloud 20s linear infinite;
+      background: url(./static/img/meeting/android_bg.png) 0 bottom no-repeat #ffffff;
+      background-size: 100vw 100vh;
+      height: 100vh;
+      width: 100vw;
+    }
+    .android_meeting_inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .android_meeting_inner_logo {
+      width: 7em;
+      margin-top: 70px;
+    }
+    .android_meeting_main {
+      position: relative;
+      margin-top: 50px;
+    }
+    .android_meeting_inner_bg {
+      width: calc(100vw - 80px);
+    }
+    .a-outer {
+      position: absolute;
+      top: 50px;
+      width: 100%;
+      text-align: center;
+    }
+    .atitle1 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #333333;
+    }
+    .atitle2 {
+      font-size: 14px;
+      font-weight: 400;
+      color: #333333;
+      margin-top: 20px;
+    }
+    .atitleBtn {
+      width: 196px;
+      height: 42px;
+      background: #008CFF;
+      border-radius: 19px;
+      margin: 0 auto;
+      margin-top: 3.6em;
+      color: #fff;
+      line-height: 42px;
+      display: block;
+    }
+    .afooter {
+      display: flex;
+      margin-top: 40px;
+    }
+    .afooterInfo {
+      line-height: 26px;
+      font-size: 15px;
+    }
+    .afooterDownload {
+      text-align: center;
+      width: 82px;
+      height: 22px;
+      border: 1px solid #008CFF;
+      border-radius: 14px;
+      padding: 1px 7px;
+      font-size: 14px;
+    }
+    @media (max-width: 960px) {
+      #pc_meetingBg {
+        display: none;
+      }
+      #android_meeting {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="pc_meetingBg">
+  <div class="main-row">
+    <div id="meetingContainer">
+      <div class="meeting_left">
+        <img src="./static/img/meeting/logo.png" class="logo_img" alt="">
+      </div>
+      <div class="meeting_right">
+        <div class="meeting_right_column">
+          <div class="meeting-title">请选择加入会议的方式</div>
+          <a href="https://file.cguarantee.cn/task/%e8%bd%bb%e8%88%9f.exe" target="_blank" class="meeting-download-container">
+            <img class="meeting-img" src="./static/img/meeting/download.png" alt="">
+            <div style="padding-left: 20px;">
+              <div  class="download_title">下载轻舟</div>
+              <div  class="download_info">使用桌面端应用，获得完整的会议体验</div>
+            </div>
+          </a>
+          <div style="text-align: center;">
+            <div style="display: inline;font-size: 14px;">已经安装轻舟桌面端？
+              <!-- qingzhou:?action=joinMeeting&roomId=123456 -->
+              <a id="roomLink" href=""><h3>点击打开</h3></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="android_meeting">
+  <div class="android_meeting_inner">
+    <img class="android_meeting_inner_logo" src="./static/img/meeting/logo.png" alt="">
+    <div class="android_meeting_main">
+      <img class="android_meeting_inner_bg" src="./static/img/meeting/android_join_bg.png" alt="">
+      <div class="a-outer">
+        <div class="atitle1">加入视频会议</div>
+        <div class="atitle2">会议ID：<span class="showRoomId"></span></div>
+        <a id="androidRoomLink" href="" class="atitleBtn">加入会议</a>
+      </div>
+    </div>
+    <div class="afooter">
+      <div class="afooterInfo">
+        没有轻舟？
+      </div>
+      <a href="https://file.cguarantee.cn/task/%e8%bd%bb%e8%88%9f.apk" target="_blank" class="afooterDownload">
+        点击下载
+      </a>
+    </div>
+  </div>
+</div>
+
+<!--https://file.cguarantee.cn/task/sharemeeting.html?roomid=32-->
+<script>
+  function GetRequest() {
+    var url = location.search;
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
+  var Request = GetRequest();
+  const roomid = Request['roomid']
+  console.log('roomid', roomid)
+  const linkEl = document.getElementById('roomLink')
+  const androidRoomLink = document.getElementById('androidRoomLink')
+  const roomEl = document.querySelectorAll('.showRoomId')
+  roomEl.forEach(el => {
+    el.innerText = roomid
+  })
+  if(linkEl && roomid) {
+    const protocolLink = `qingzhou:?action=joinMeeting&roomId=${roomid}`
+    const androidProtocolLink = `oaui://%action='joinMeeting'%roomId=${roomid}`
+    linkEl.setAttribute('href', protocolLink)
+    androidRoomLink.setAttribute('href', androidProtocolLink)
+  } else {
+    window.alert(`会议ID不存在`)
+  }
+</script>
+</body>
+</html>

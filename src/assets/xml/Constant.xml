@@ -1,0 +1,21 @@
+<!-- 数据格式化 -->
+<Constant version="2019-12-3">
+  <!-- 群成员身份呢 -->
+  <Item name="RoomMemberRole">
+    <Node key="1" value="群主"></Node>
+    <Node key="2" value="管理员"></Node>
+    <Node key="3" value="普通成员"></Node>
+    <Node key="4" value="隐身人"></Node>
+    <Node key="5" value="监控人"></Node>
+  </Item>
+  <!-- 性别 -->
+  <Item name="Sex">
+    <Node key="0" value="女"></Node>
+    <Node key="1" value="男"></Node>
+  </Item>
+  <!-- 消息传输方式 -->
+  <Item name="MessageEncrypt">
+    <Node key="0" value="消息明文传输"></Node>
+    <Node key="1" value="消息3DES加密传输"></Node>
+  </Item>
+</Constant>

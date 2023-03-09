@@ -1,0 +1,767 @@
+ //to reset element-ui default css
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+.el-button{
+  padding: 0 10px;
+  // width: 84px;
+  height: 32px;
+  border-radius: 6px;
+}
+.button_box{
+  .el-button{
+    margin-left: 20px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+.el-upload__input {
+  display: none;
+}
+
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+  .el-dialog__header{
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    padding: 0 30px;
+    font-size: 16px;
+    background: #FFFFFF;
+    height: 52px;
+    .dialog-header-row{
+      border: none;
+      padding: 0;
+      .dialog-tip{
+        width: 4px;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+  }
+}
+
+.close_header{
+  .el-dialog__header{
+    display: none!important;
+  }
+  .el-dialog__body{
+    padding-top: 24px!important;
+    .flex-center{
+      margin-top: 0!important;
+    }
+  }
+}
+
+.scrollbar_style::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 2px;
+}
+.scrollbar_style::-webkit-scrollbar-thumb{
+  background-color: #DDDDDD;
+}
+.scrollbar_style::-webkit-scrollbar-track:active {
+  background-color: #F5F6F7;
+}
+.el-scrollbar .el-scrollbar__bar.is-vertical{
+  right: 1px;
+  width: 5px;
+  .el-scrollbar__thumb{
+    background: #DDDDDD;
+  }
+}
+
+//element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+// 新增任务弹窗
+#addNewTaskNew{
+  .el-dialog{
+    font-size: 14px;
+    font-family: SourceHanSansCN-Normal;
+    top: 50%;
+    left: 50%;
+    margin: 0 !important;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-height: calc(100% - 70px);
+    max-width: calc(100% - 30px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .el-dialog__body{
+    overflow: auto;
+  }
+}
+
+
+.task_new_set_up{
+  width: 680px;
+  padding-bottom: 20px;
+  user-select: none;
+  .el-dialog__body{
+    padding: 16px 30px 0;
+    max-height: 640px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+      width: 5px;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb{
+      background-color: #DDDDDD;
+    }
+    &::-webkit-scrollbar-track:active {
+      background-color: #DDDDDD;
+    }
+  }
+  .el-form-item__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .icon_img{
+      width: 18px;
+      margin-right: 22px;
+    }
+  }
+  .el-form-item{
+    margin-bottom: 20px!important;
+  }
+  .el-form-item::after, 
+  .el-form-item::before,
+  .el-form-item__content::before,
+  .el-form-item__content::after{
+    content: '';
+    display: none;
+  }
+  .el-textarea__inner::-webkit-input-placeholder,
+  .el-input__inner::-webkit-input-placeholder{
+    color: #BBBFC4;
+    font-size: 14px!important;
+    line-height: 20px;
+    font-family: 'SourceHanSansCN-Light';
+  }
+  .add_taskName{
+    .el-input{
+      width: 400px;
+      .el-input__inner{
+        padding: 0 30px 0 10px;
+      }
+    }
+    .el-checkbox{
+      margin: 0;
+    }
+  }
+  // 关联上级任务
+  .superior_task{
+    .el-input__inner:focus{
+      border-color: #DCDFE6;
+      outline: none;
+    }
+    .el-input__inner:hover{
+      border-color:#DCDFE6;
+    }
+    .el-input__inner{
+      padding: 0 10px;
+    }
+    .box-card.is-always-shadow{
+      z-index: 30;
+      position: absolute;
+      top: 28px;
+      right: 0;
+      width: calc(100% - 40px);
+      box-shadow: none;
+      border: 1px solid #DCDFE6;
+      border-radius: 0 0 4px 4px;
+      border-top: none;
+      .el-card__body{
+        margin: 10px;
+        padding: 0;
+        padding-top: 10px;
+        border-top: 1px solid #F2F2F2;
+        .el-tabs .is-active{
+          background-color: #FBFBFC;
+          color: #333333;
+        }
+        .el-tabs__item:hover{
+          color: #333333;
+        }
+        .el-tabs__content{
+          color: #333333;
+          font-family: 'SourceHanSansCN-Regular';
+        }
+        .el-table__row{
+          cursor: pointer;
+          background: none!important;
+        }
+      }
+    }
+  }
+  // 任务内容
+  .add_taskCont{
+    .el-form-item__content{
+      align-items: flex-start;
+    }
+    div{
+      width: 100%;
+    }
+    .add_taskCont_right{
+      .cont{
+        border: 1px solid #DCDFE6;
+        padding: 0 10px;
+        border-radius: 6px;
+        .el-textarea__inner{
+          padding: 0;
+          // width: calc(100% - 20px);
+          margin: 5px 0;
+          border: none!important;
+          border-bottom: 1px solid #F2F2F2!important;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+        }
+        .up_file{
+          margin-left: auto;
+          height: 40px;
+          width: 84px;
+          line-height: 40px;
+          img{
+            width: 16px;
+            margin-right: 10px;
+          }
+          .task_enclosure_cont{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            border-color: #409EFF;
+            color: #409EFF;
+          }
+        }
+      }
+      .file_list{
+        .file_box_item{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: #BBBFC4;
+          padding: 10px 20px 10px 10px;
+          margin-top: 10px;
+          cursor: pointer;
+          background-color: #FBFBFC;
+          border-radius: 6px;
+          div{
+            display: flex;
+            align-items: center;
+            img{
+              width: 16px;
+              margin-right: 10px;
+            }
+          }
+          .close_btn{
+            width: 10px;
+          }
+          .file-ico{
+            width: auto;
+          }
+        }
+      }
+      
+    }
+  }
+  // 添加执行人、关注人
+  .add_execute_box{
+    .task-people-btn-box{
+      display: flex;
+      justify-content: space-between;
+      justify-items: center;
+      min-height: 36px;
+      width: 100%;
+      padding: 4px;
+      border-radius: 6px;
+      border: 1px solid #DCDFE6;
+     
+      .task-people-box{
+        display: flex;
+        align-items: baseline;
+        flex-flow: wrap;
+        .task-add-people{
+          display: flex;
+          align-items: center;    
+          justify-content: space-around;
+          padding: 5px 8px;
+          height: 28px;
+          background: #FBFBFC;
+          opacity: 1;
+          border-radius: 4px;
+          margin-right: 10px;
+          img{
+            cursor: pointer;
+            margin-left: 10px;
+            width: 6px;
+            height: 6px;
+          }
+        }
+        .people_many{
+          margin-top: 10px;
+        }
+      }
+      .add_people_execute{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 28px;
+        width: 82px;
+        margin-right: 10px;
+        font-size: 14px;
+        color: #86A5FF;
+        cursor: pointer;
+        border-radius: 4px;
+        border: 1px dashed #DCDFE6;
+        font-family: 'SourceHanSansCN-Light';
+      }
+    }
+  }
+  // 设置时间 - 循环任务
+  .set_date_box{
+    .icon_up_down{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #FBFBFC;
+      img{
+        width: 16px;
+      }
+    }
+    
+    .task-date-box{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: calc(100% - 26px);
+      .data_time{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 214px;
+        .date .el-date-editor.el-input,
+        .time .el-date-editor.el-input{
+          width: 102px;
+          .el-input__inner{
+            padding: 0 8px;
+            height: 36px;
+            // text-align: center;
+            border-radius: 6px;
+          }
+        }
+        .el-input__prefix, .el-input__suffix{
+          display: none;
+        }
+      }
+      .time_btn{
+        width: 80px;
+        margin-left: 20px;
+        .el-checkbox__label{
+          font-size: 14px;
+        }
+        .el-checkbox__inner{
+          border-radius: 50%;
+        }
+        .el-checkbox__input.is-checked + .el-checkbox__label{
+          color: #646A73;
+        }
+      }
+      .task_type{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 120px;
+        cursor: pointer;
+        margin-left: 20px;
+        img{
+          width: 16px;
+          margin-right: 6px;
+        }
+      }
+      .data_class, 
+      .data_time_class{
+        width: calc(100% - 30px);
+        display: flex;
+        align-items: center;
+        .loop_task{
+          height: 32px;
+          width: 310px;
+          color: #BBBFC4;
+          padding-left: 8px;
+          border-radius: 6px;
+          cursor: pointer;
+          border: 1px solid #DCDFE6;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+
+      .data_class{
+        .date, 
+        .date .el-date-editor.el-input{
+          width: 100%;
+          .el-input__inner{
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  // 设置优先级
+  .task_sort{
+    .task_sort_cont{
+      display: flex;
+      width: calc(100% - 26px);
+      .el-select.el-select--small{
+        width: 214px;
+        margin-right: 20px;
+        .el-input__inner{
+          height: 36px;
+        }
+      }
+      .el-checkbox__label{
+        font-size: 14px;
+      }
+      .el-checkbox__inner{
+        border-radius: 50%;
+      }
+      .el-checkbox__input.is-checked + .el-checkbox__label{
+        color: #646A73;
+      }
+    }
+  }
+  .loop_task, .task_sort, .task_enclosure{
+    img{
+      width: 16px;
+      margin-right: 10px;
+    }
+    .create_loop_task{
+      cursor: pointer;
+      width: 100%;
+      height: 32px;
+      color: #3370FF;
+      text-align: center;
+      line-height: 32px;
+      border-radius: 6px;
+      border: 1px solid #DCDFE6;
+    }
+    
+    .uploadFile.upload-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 1px solid #DCDFE6;
+
+    }
+  }
+  .task_btn{
+    margin-top: 30px;
+    text-align: right;
+    .el-button--primary{
+      padding: 6px 14px;
+      height: 32px;
+      font-size: 14px;
+      line-height: 14px;
+      background: #3370FF;
+      border-radius: 4px;
+      border: none;
+      width: auto;
+      &:hover{
+        background: #5B8CFF;
+      }
+    }
+  }
+  
+  .el-dialog__header{
+    height: 70px;
+    background: none;
+    padding: 0 20px 0 30px!important;
+    .dialog-header-row{
+      position: relative;
+    }
+    .el-dialog__title{
+      line-height: 70px;
+      font-size: #333333;
+      font-family: 'SourceHanSansCN-Medium';
+      // &::before{
+      //   content: '';
+      //   height: 4px;
+      //   width: 100%;
+      //   background-color: #3471FF;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      // }
+    }
+  }
+  // element-ui 上传文件的进度条
+  .upload-demo{
+    .el-upload-list.el-upload-list--text{
+      display: none;
+    }
+  }
+  .el-checkbox{
+    .el-checkbox__inner{
+      border-radius: 50%;
+    }
+  }
+}
+
+// 循环任务-dialog
+#add_loop_task{
+  user-select: none;
+  .el-dialog{
+    margin-top: 20vh!important;
+  }
+  .el-dialog__header{
+    height: 70px;
+    background: none;
+    padding: 0 20px 0 30px!important;
+    .dialog-header-row{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      img{
+        cursor: pointer;
+        width: 12px;
+      }
+    }
+    .el-dialog__title{
+      display: inline-block;
+      line-height: 70px;
+      font-size: #333333;
+      font-family: 'SourceHanSansCN-Medium';
+      // &::before{
+      //   content: '';
+      //   height: 4px;
+      //   width: 100%;
+      //   background-color: #3471FF;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      // }
+    }
+  }
+  .el-dialog__body{
+    padding: 10px 30px 20px;
+  }
+}
+.loop_task_container{
+  .el-textarea__inner::-webkit-input-placeholder,
+  .el-input__inner::-webkit-input-placeholder{
+    color: #BBBFC4;
+    font-size: 14px!important;
+    line-height: 20px;
+    font-family: 'SourceHanSansCN-Light';
+  }
+  .input{
+    font-family: 'SourceHanSansCN-Regular';
+  }
+  .el-form-item__content{
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    .icon_img{
+      width: 18px;
+      margin-right: 20px;
+    }
+    .form_cont{
+      width: calc(100% - 38px);
+    }
+    .el-form-item__error{
+      left: 38px;
+    }
+  }
+
+  .loopTimerPickerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 5px;
+    .w-date-item {
+      margin-top: 10px;
+      width: 60px;
+      height: 32px;
+      font-size: 13px;
+      color: #37476B;
+      text-align: center;
+      margin-right: 6px;
+      background-color: #F3F3F3;
+      border-radius: 4px;
+      &:nth-child(5n + 5) {
+        margin-right: 0;
+      }
+    }
+    .item-active {
+      color: #fff!important;
+      background: #86A5FF!important;
+    }
+  }
+
+  .monthPicker {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 6px;
+    .month-date-item {
+      width: 32px;
+      height: 32px;
+      margin: 0 16px 16px 0;
+      background-color: #F3F3F3;
+      border-radius: 4px;
+      .month-date-item-inner {
+        width: 32px;
+        height: 32px;
+        // border: 1px solid #DCDFE6;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      &:nth-child(7n + 7) {
+        margin-right: 0;
+      }
+    }
+    .no_bag{
+      visibility: hidden;
+    }
+    .month-bottom-date {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .month-b-inner{
+        font-size: 13px;
+        height: 32px;
+        background-color: #F3F3F3;
+        border-radius: 4px;
+      }
+      .month_one_day {
+        .month-b-inner {
+          width: 128px;
+          margin-right: 16px;
+        }
+      }
+      .month_all_day {
+        .month-b-inner {
+          width: 158px;
+        }
+      }
+    }
+    .item_active {
+      color: #fff!important;
+      background: #86A5FF!important;
+    }
+  }
+  .date_item{
+    .form_cont{
+      display: flex;
+      justify-content: space-between;
+      &>div{
+        display: flex;
+        align-items: center;
+        .line{
+          width: 10px;
+          margin: 0 10px;
+        }
+      }
+      .el-checkbox{
+        margin: 0;
+      }
+    }
+    .el-date-editor.el-input{
+      width: 115px;
+    }
+    .el-input__inner{
+      width: 115px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid #DCDFE6;
+    }
+    .el-input__prefix, .el-input__suffix{
+      display: none;
+    }
+  }
+  .end_time{
+    .form_cont{
+      &>div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .el-date-editor.el-input{
+      width: 260px;
+    }
+    .el-input__inner{
+      width: 260px;
+      height: 32px;
+      border-radius: 6px;
+      border: 1px solid #DCDFE6;
+    }
+    .el-input__prefix, .el-input__suffix{
+      display: none;
+    }
+    .el-checkbox{
+      margin: 0;
+    }
+  }
+}
+.loop_task_container_noIcon{
+  .form_cont{
+    width: 100%!important;
+  }
+  .el-input__inner{
+    background-color: #FFFFFF;
+  }
+  .loopTimerPickerContainer .w-date-item{
+    margin-right: 10px!important;
+  }
+  .monthPicker .month-date-item{
+    margin-right: 19px!important;
+    &:nth-child(7n + 7) {
+      margin-right: 0!important;
+    }
+  }
+}
+
+.search_task_parent{
+  .search_item{
+    display: flex;
+    align-items: center;
+    .search_cont{
+      color: #3471ff;
+      margin-left: 10px;
+      display: inline-block;
+      max-width: 120px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

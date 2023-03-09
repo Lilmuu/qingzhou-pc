@@ -1,0 +1,13 @@
+.readOnlyClass{
+    .el-input__inner{
+        background-color: white !important;
+        border: 0;
+        color: #333333 !important;
+    }
+    .el-textarea__inner{
+        background-color: white !important;
+        color: #333333 !important;
+        resize: none;
+        border: 0;
+    }
+}

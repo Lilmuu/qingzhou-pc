@@ -1,0 +1,133 @@
+// 新版UI新增
+#app .workbench-container {
+    .contract-model,
+    .use-seal-model,
+    .dispath-model {
+        background-color: #fff;
+        border-radius: 10px;
+        .sbtn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 84px;
+          height: 32px;
+        }
+        .warning {
+          display: inline-block;
+          width: 14px;
+          height: 14px;
+          background: url("../../assets/img/workSpace/warning.png") no-repeat center/cover;
+        }
+        ::v-deep.newBuilt {
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+        ::v-deep.el-select .el-input__inner {
+          width: 200px;
+          height: 32px;
+          border: 1px solid #DEE0E3;
+        }
+        ::v-deep  .el-select .is-disabled .el-input__inner {
+          border: 0!important;
+          margin-left: 0!important;
+        }
+        ::v-deep .el-form-item__content {
+          line-height: 50px;
+        }
+        ::v-deep .el-date-editor {
+          width: 210px;
+          margin-left: 15px;
+          .el-input , .el-input__inner {
+            width: 200px;
+            height: 32px;
+          }
+          .el-input__inner {
+            border: 1px solid #DEE0E3;
+          }
+        }
+        ::v-deep .is-disabled {
+          .el-input__suffix-inner {
+            display: none;
+          }
+        }
+      ::v-deep .el-form-item__label{
+        position: relative;
+        text-align: left !important;
+        padding-left: 26px!important;
+        justify-content: flex-start;
+        &:before {
+          position: absolute;
+          left: 18px;
+        }
+      }
+      ::v-deep .el-select-dropdown {
+        width: 200px!important;
+      }
+      ::v-deep .el-dialog__header {
+        background-color: #fff;
+      }
+      ::v-deep .el-dialog__footer {
+        border-top: 0;
+      }
+      ::v-deep  .el-form-item__error{
+        display: none;
+      }
+      .is-error-value ::v-deep .el-input__inner::placeholder{
+        color: #f56c6c;
+      }
+    }
+
+
+    .flow-img-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 32px;
+      padding: 0 10px;
+      color: #3370FF;
+      font-size: 14px;
+      border: 1px solid #3370FF;
+      background: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      .flow-ico {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        background: url("../../assets/img/workbench/flow-blue.png") no-repeat center/cover;
+      }
+    }
+    .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        .submit_btn {
+          display: flex;
+          margin: 0;
+          .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 84px;
+            height: 32px;
+            font-size: 14px;
+            border: 1px solid #DEE0E3;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+        }
+    }
+  }
+
+
+
+.remark-content {
+  .frist{
+    margin-right: 40px;
+  }
+  .second{
+    margin-right: 16px;
+  }
+}
